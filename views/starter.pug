@@ -3,4 +3,10 @@ append styles
 	// Custom styles for this template
 	link(href='/styles/starter-template.css', rel='stylesheet')
 block body
+	+navbar-fixed("iCreatique","navbar","inverse")
+		+nav_item("/") Home
+		+nav_item("/about") About
+		+nav_item("/info") Project Info 
+		+nav_item("/status") Project Status
+		+nav_item("/activities") Project Activities
 	.container
