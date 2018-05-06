@@ -1,0 +1,17 @@
+extends starter
+append body
+  .container
+    h1 Restaurants
+    ul
+      for restaurant in restaurants
+        li
+          a(href="/restaurants/" + restaurant._id) #{restaurant.name}
+      else
+        li sorry, no restaurants!
+    h4 Add new restaurant
+    form(action=current_url, method="post")
+      div.input
+          span Name
+          input(type="text", name="name")
+      div.actions
+          input(type="submit", value="Submit")

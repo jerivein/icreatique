@@ -1,0 +1,18 @@
+extends starter
+append body
+  .container
+    a(href="/") Back to all restaurants
+    h1 Foods for #{restaurant.name}
+    ul
+      for menuItem in restaurant.menuItems
+        li
+          a(href="/restaurants/" + restaurant._id + "/" + menuItem._id) #{menuItem.name}
+      else
+        li sorry, no foods found!
+    h4 Add new food
+    form(action=current_url, method="post")
+      div.input
+          span Name
+          input(type="text", name="name")
+      div.actions
+          input(type="submit", value="Submit")

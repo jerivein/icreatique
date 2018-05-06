@@ -1,0 +1,42 @@
+extends starter
+append body
+  .container
+    a(href="./") Back to #{restaurant.name}
+    h1 Reviews for #{food.name}
+    ul
+      for review in food.ratings
+        li
+          div
+            h3 Review by #{review.name} (#{review.stars} stars)
+            p= review.comment
+      else
+        li sorry, no reviews found!
+    h4 Add review
+    form(action=current_url, method="post")
+      div.input
+          span Name
+          input(type="text", name="name")
+      div.input
+          span Review
+          textarea(name="comment", cols="40", rows="5")
+      div.input
+        span Rating
+        div
+          input(type='radio', name='stars', value='1')#wnr1
+          label(for='wnr1') 1
+        div
+          input(type='radio', name='stars', value='2')#wnr2
+          label(for='wnr2') 2
+        div
+          input(type='radio', name='stars', value='3')#wnr3
+          label(for='wnr3') 3
+        div
+          input(type='radio', name='stars', value='4')#wnr4
+          label(for='wnr4') 4
+        div
+          input(type='radio', name='stars', value='5')#wnr5
+          label(for='wnr5') 5
+      div.actions
+          input(type="submit", value="Submit")
+
+
