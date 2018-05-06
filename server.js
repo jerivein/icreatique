@@ -9,6 +9,7 @@ var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://admin:admin@ds239968.mlab.com:39968/besteats'); // connect to our database
+var path = require('path');
 
 var Restaurant = require('./models/restaurant');
 var MenuItem = require('./models/menuItem');
@@ -46,19 +47,40 @@ var viewRouter = express.Router();
 app.set('views', './views');
 app.set('view engine', 'pug');
 app.use("/styles", express.static(__dirname + '/styles'));
+app.use("/images", express.static(__dirname + '/images'));
 
 viewRouter.use(function(req, res, next){
   console.log(req.originalUrl);
   next();
 });
 
-viewRouter.route('/')
+viewRouter.get('/about', function(req, res){
+    res.render('about', {});
+});
+
+viewRouter.get('/status', function(req, res){
+    res.render('status', {});
+});
+
+viewRouter.get('/activities', function(req, res){
+    res.render('activities', {});
+});
+
+viewRouter.get('/info', function(req, res){
+    res.render('info', {});
+});
+
+viewRouter.get('/', function(req, res){
+  res.redirect('/restaurants');
+});
+
+viewRouter.route('/restaurants')
 .get(function(req, res){
   Restaurant.find(function(err, restaurants) {
     if (err) {
       res.send(err);
     }
-    res.render('index', { restaurants: restaurants })
+    res.render('index', { restaurants: restaurants });
   });
 })
 .post(function(req, res) {
@@ -69,12 +91,7 @@ viewRouter.route('/')
       if (err) {
         res.send(err);
       }
-      res.redirect(req.originalUrl);
     });
-});
-
-viewRouter.get('/restaurants', function(req, res){
-  res.redirect('/');
 });
 
 viewRouter.route('/restaurants/:restaurant_id')
