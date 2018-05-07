@@ -5,7 +5,6 @@ append body
     h1 Restaurants
     ul
       for restaurant in restaurants
-        #restname
         li 
           a(href="/restaurants/" + restaurant._id) #{restaurant.name}
       else
