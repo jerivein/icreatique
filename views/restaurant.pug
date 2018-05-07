@@ -8,7 +8,7 @@ append body
         li
           a(href="/restaurants/" + restaurant._id + "/" + menuItem._id) #{menuItem.name}
       else
-        li sorry, no foods found!
+        li Sorry, No Foods Found!
     h4 Add new food
     form(action=current_url, method="post")
       div.input
