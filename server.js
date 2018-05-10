@@ -141,6 +141,10 @@ viewRouter.route('/restaurants/:restaurant_id/:food_id')
   });
 });
 
+viewRouter.route('/register',function(req,res,next) {
+	return res.send('Register today!');
+})
+
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
