@@ -255,7 +255,7 @@ router.get('/contact', function(req, res, next) {
   return res.render('contact', { title: 'Contact' });
 });
 
-module.exports = router;
+
 
 
 
