@@ -75,6 +75,10 @@ viewRouter.get('/test', function(req, res){
     res.render('test', {});
 });
 
+viewRouter.get('/register', function(req, res, next) {
+	return res.send('Register today!')
+});
+
 viewRouter.get('/', function(req, res){
   res.redirect('/restaurants');
 });
