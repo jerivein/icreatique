@@ -14,7 +14,7 @@ var path = require('path');
 var Restaurant = require('./models/restaurant');
 var MenuItem = require('./models/menuItem');
 var Review = require('./models/review');
-
+var User = require('./models/user');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
@@ -80,8 +80,22 @@ viewRouter.get('/register', function(req, res, next) {
 });
 
 viewRouter.post('/register', function(req, res, next){
-	return res.send('User created!);
-			})
+	if (req.body.email &&
+	    req.body.name &&
+	    req.body.password &&
+	    req.body.confirmPassword) {
+		
+		//confirm user typed same password twice
+		if (req.body.password !== req.body.confirmPassword) {
+			var err = new Error('Passwords do not match.');
+			err.status = 400;
+			return next(err);
+	} else {
+		var err = new Error('All fields required.');
+		err.status = 400;
+		return next(err);
+	}
+})
 
 viewRouter.get('/', function(req, res){
   res.redirect('/restaurants');
