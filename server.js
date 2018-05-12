@@ -76,8 +76,12 @@ viewRouter.get('/test', function(req, res){
 });
 
 viewRouter.get('/register', function(req, res, next) {
-	return res.send('Register today!')
+	return res.send('register', {title: 'Sign Up'});
 });
+
+viewRouter.post('/register', function(req, res, next){
+	return res.send('User created!);
+			})
 
 viewRouter.get('/', function(req, res){
   res.redirect('/restaurants');
