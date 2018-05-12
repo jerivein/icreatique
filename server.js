@@ -90,7 +90,25 @@ viewRouter.post('/register', function(req, res, next){
 			var err = new Error('Passwords do not match.');
 			err.status = 400;
 			return next(err);
-	} else {
+		} 
+		//creat object with form input
+		var userData = {
+			email: req.body.email,
+			name: req.body.name,
+			password: req.body.password
+		};
+		
+		//use 'create' method to insert doc into mlab
+		User.create(userData, function (error, user) {
+			if (error) {
+				return next(error);
+			} else {
+				return res.redirect('/test');
+			}
+		});
+		
+		
+		else {
 		var err = new Error('All fields required.');
 		err.status = 400;
 		return next(err);
