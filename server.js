@@ -9,12 +9,9 @@ var app        = express();                 // define our app using express
 var bodyParser = require('body-parser');
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://admin:admin@ds239968.mlab.com:39968/besteats'); // connect to our database
-var db = mongoose.connection; //testing registration var #test
+
 var path = require('path');
 
-//testing registration var #test
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
 
 var Restaurant = require('./models/restaurant');
 var MenuItem = require('./models/menuItem');
