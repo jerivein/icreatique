@@ -5,14 +5,14 @@ append body
     h1 Menu Items for #{restaurant.name}
     ul
       for menuItem in restaurant.menuItems
-        li
-          a(href="/restaurants/" + restaurant._id + "/" + menuItem._id) #{menuItem.name}
+        li#rest
+          a#namesize(href="/restaurants/" + restaurant._id + "/" + menuItem._id) #{menuItem.name}
       else
         li Sorry, No Items Found!
     h4 Add Menu Item
     form(action=current_url, method="post")
-      div.input
+      div#form.input
           span Name
           input(type="text", name="name")
-      div.actions
+      div#sub.actions
           input(type="submit", value="Submit")

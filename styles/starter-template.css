@@ -43,7 +43,33 @@ h4 {
   font-family: serif;
 }
 #sub {
-
+padding-bottom:10px;
   padding-left: 60px;
   color:#8B0000;
+}
+#sub1 {
+padding-bottom: 10px;
+  color:#8B0000;
+}
+#review {
+margin-bottom: 10px;
+  padding-bottom:10px;
+  padding-top:10px;
+  padding-left: 47px;
+}
+#reviews {
+  padding-left:47px;
+}
+#star {
+  float:left;
+  padding: 20px;
+}
+#span {
+  padding-top: 17px;
+  float:left;
+}
+#submit {
+  padding-left: 10px;
+  padding-top:20px;
+  float:left;
 }
