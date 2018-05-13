@@ -75,10 +75,15 @@ viewRouter.get('/test', function(req, res){
     res.render('test', {});
 });
 
+viewRouter.get('/register', function(req, res){
+	res.render('register', {});
+});
 
 viewRouter.get('/', function(req, res){
   res.redirect('/restaurants');
 });
+
+
 
 viewRouter.route('/restaurants')
 .get(function(req, res){
