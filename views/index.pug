@@ -7,14 +7,14 @@ append body
       for restaurant in restaurants
         li
           div#rest
-            a(href="/restaurants/" + restaurant._id) #{restaurant.name}
+            a#namesize(href="/restaurants/" + restaurant._id) #{restaurant.name}
       else
         li Sorry, No Restaurants!
-    h4 Add new restaurant
+    h4 Add New Restaurant
 
     form(action=current_url, method="post")
-      div.input
+      div#form.input
           span Restaurant Name
           input(type="text", name="name")
-      div.actions
+      div#sub.actions
           input(type="submit", value="Submit")

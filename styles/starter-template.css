@@ -9,8 +9,41 @@ body {
   border: 1px solid black;
 }
 #rest {
-  border: 1px solid red;
+  border: 1px solid black;
+  padding: 15px;
+  text-align: center;
 }
 li {
   list-style-type: none;
+
+}
+h1 {
+  padding-bottom: 10px;
+  font-size: 45px;
+  font-family: serif;
+  text-align:center;
+  color:#8B0000;
+  padding-left:20px;
+}
+#namesize {
+  font-size: 20px;
+}
+h4 {
+  padding-left:20px;
+  padding-top: 10px;
+  font-family:serif;
+  color:#8B0000;
+  font-size:25px;
+}
+#form {
+  padding-bottom: 10px;
+  padding-left: 20px;
+  color:#8B0000;
+  font-size:18px;
+  font-family: serif;
+}
+#sub {
+
+  padding-left: 60px;
+  color:#8B0000;
 }

@@ -2,14 +2,14 @@ extends starter
 append body
   .container
     a(href="/") Back to all restaurants
-    h1 Foods for #{restaurant.name}
+    h1 Menu Items for #{restaurant.name}
     ul
       for menuItem in restaurant.menuItems
         li
           a(href="/restaurants/" + restaurant._id + "/" + menuItem._id) #{menuItem.name}
       else
-        li Sorry, No Foods Found!
-    h4 Add new food
+        li Sorry, No Items Found!
+    h4 Add Menu Item
     form(action=current_url, method="post")
       div.input
           span Name
