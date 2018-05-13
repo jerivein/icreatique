@@ -77,43 +77,9 @@ viewRouter.get('/test', function(req, res){
 
 viewRouter.get('/register', function(req, res, next) {
 	return res.send('register', {title: 'Sign Up'});
+
 });
 
-viewRouter.post('/register', function(req, res, next){
-	if (req.body.email &&
-	    req.body.name &&
-	    req.body.password &&
-	    req.body.confirmPassword) {
-		
-		//confirm user typed same password twice
-		if (req.body.password !== req.body.confirmPassword) {
-			var err = new Error('Passwords do not match.');
-			err.status = 400;
-			return next(err);
-		} 
-		//creat object with form input
-		var userData = {
-			email: req.body.email,
-			name: req.body.name,
-			password: req.body.password
-		};
-		
-		//use 'create' method to insert doc into mlab
-		User.create(userData, function (error, user) {
-			if (error) {
-				return next(error);
-			} else {
-				return res.redirect('/test');
-			}
-		});
-		
-		
-		else {
-		var err = new Error('All fields required.');
-		err.status = 400;
-		return next(err);
-	}
-})
 
 viewRouter.get('/', function(req, res){
   res.redirect('/restaurants');
