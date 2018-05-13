@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-var UserSchema = new mongoose.Schema({
+var Schema = mongoose.Schema;
+
+var UserSchema = Schema({
   email: {
     type: String,
     unique: true,
@@ -16,5 +18,6 @@ var UserSchema = new mongoose.Schema({
     required: true
     }
 });
-var User = mongoose.Model('User', UserSchema);
+
+var User = mongoose.model('User', UserSchema);
 module.exports = User;
