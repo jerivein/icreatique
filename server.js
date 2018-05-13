@@ -14,7 +14,7 @@ var path = require('path');
 var Restaurant = require('./models/restaurant');
 var MenuItem = require('./models/menuItem');
 var Review = require('./models/review');
-var User = require('./models/user');
+
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
