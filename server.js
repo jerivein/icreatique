@@ -75,6 +75,7 @@ viewRouter.get('/test', function(req, res){
     res.render('test', {});
 });
 
+
 viewRouter.get('/', function(req, res){
   res.redirect('/restaurants');
 });
