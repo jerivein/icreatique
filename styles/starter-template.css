@@ -8,3 +8,9 @@ body {
 #restdiv {
   border: 1px solid black;
 }
+#rest {
+  border: 1px solid red;
+}
+li {
+  list-style-type: none;
+}
